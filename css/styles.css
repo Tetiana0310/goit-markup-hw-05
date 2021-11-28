@@ -784,3 +784,49 @@ img {
   transform: translateY(0);
   opacity: 1;
 }
+
+/*---------MODAL WINDOW---------*/
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 350ms, visibility 350ms;
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(1.5) rotate(180deg);
+}
+
+.modal {
+  width: 528px;
+  height: 581px;
+  background-color: var(--second-text-color);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) rotate(0) translate(-50%, -50%);
+  transition: transform 350ms;
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
